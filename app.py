@@ -8,7 +8,6 @@ from datetime import datetime
 import re
 import locale
 
-
 try:
     locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
 except:
@@ -40,6 +39,7 @@ def get_qr_base64(text):
     qr = qrcode.make(text)
     buf = BytesIO()
     qr.save(buf, format="PNG")
+    # Es fundamental usar getvalue() y el retorno completo para que el PDF lo lea
     return f"data:image/png;base64,{base64.b64encode(buf.getvalue()).decode()}"
 
 def insertar_saltos(texto, max_chars=12): # Bajamos a 12 para que entre en los 90px
@@ -319,4 +319,5 @@ if st.button("🚀 GENERAR FUT", use_container_width=True):
 if 'pdf_final' in st.session_state:
 
     st.download_button("📥 DESCARGAR FUT LLENADO", st.session_state.pdf_final, f"FUT_{f_dni}.pdf", "application/pdf", use_container_width=True)
+
 
