@@ -6,7 +6,6 @@ import base64
 import os
 from datetime import datetime
 import re
-import textwrap
 import locale
 
 
@@ -320,3 +319,4 @@ if st.button("🚀 GENERAR FUT", use_container_width=True):
 if 'pdf_final' in st.session_state:
 
     st.download_button("📥 DESCARGAR FUT LLENADO", st.session_state.pdf_final, f"FUT_{f_dni}.pdf", "application/pdf", use_container_width=True)
+
