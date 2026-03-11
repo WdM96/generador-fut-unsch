@@ -153,7 +153,7 @@ def build_html(d):
         </div>
         <p style="font-weight: bold; margin: 15px 0 5px 0;">POR LO EXPUESTO: A usted, Señor Director, pido acceder a mi solicitud por ser de justicia.</p>
         
-<table class="table" style="width: 92%; margin-left: 20%; border-collapse: collapse; margin-top: 15px; table-layout: fixed;">
+<table class="table" style="width: 92%; margin-left: 8%; border-collapse: collapse; margin-top: 15px; table-layout: fixed;">
     <tr>
         <td class="bg" width="35%" style="border: 0.5pt solid black; text-align: center; padding: 5px; background-color: #e8f3e8;">Lugar y Fecha</td>
         <td class="bg" width="40%" style="border: 0.5pt solid black; text-align: center; padding: 5px; background-color: #e8f3e8;">Firma del Solicitante:</td>
@@ -161,7 +161,7 @@ def build_html(d):
     </tr>
     <tr style="height: 75px;">
         <td style="border: 0.5pt solid black; text-align: center; vertical-align: middle;">
-            <div class="red-text" style="font-size: 10pt; font-weight: bold; color: black;">
+            <div class="red-text" style="font-size: 10pt; font-weight: bold; color: red;">
                 {d['lugar']}, {d['fecha']}
             </div>
         </td>
@@ -318,4 +318,5 @@ if st.button("🚀 GENERAR FUT", use_container_width=True):
         st.success("¡Documento generado con el espaciado correcto!")
 
 if 'pdf_final' in st.session_state:
+
     st.download_button("📥 DESCARGAR FUT LLENADO", st.session_state.pdf_final, f"FUT_{f_dni}.pdf", "application/pdf", use_container_width=True)
