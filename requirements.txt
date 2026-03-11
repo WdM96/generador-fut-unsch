@@ -1,4 +1,4 @@
 streamlit
 xhtml2pdf
-python-barcode
 qrcode
+Pillow
